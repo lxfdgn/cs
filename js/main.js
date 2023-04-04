@@ -387,8 +387,8 @@ var title1 = '靓仔的网站'
 var title2 = `                                                  
 `
 var content = `
-版 本 号：2.0.4
-更新日期：2023-04-02
+版 本 号：2.1.0
+更新日期：2023-05-06
 
 `
 console.log(`%c${title1} %c${title2}
