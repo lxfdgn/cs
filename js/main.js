@@ -30,9 +30,11 @@ window.addEventListener('load', function () {
             timeout: 2500,
             title: hello,
             message: '欢迎来到我的主页'
+
         });
     }, 800);
 }, false)
+
 
 setTimeout(function () {
     $('#loading-text').html("字体及文件加载可能需要一定时间")
@@ -345,7 +347,28 @@ for (var day of days) {
         }, false);
     }
 }
-
+//建站庆祝
+var myDate = new Date;
+var mon = myDate.getMonth() + 1;
+var date = myDate.getDate();
+var days = ['5.6'];
+for (var day of days) {
+    var d = day.split('.');
+    if (mon == d[0] && date == d[1]) {
+        document.write(
+            '<style>html;filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);_filter:none}</style>'
+        )
+        $("#change").html("Silence&nbsp;in&nbsp;silence");
+        $("#change1").html("今天是“靓仔的网站”建站一周年，本站主页已切换为欢庆模式");
+        window.addEventListener('load', function () {
+            iziToast.show({
+                timeout: 14000,
+                iconUrl: './img/icon/lihua.png',
+                message: '今天是“靓仔的网站”建站一周年'
+            });
+        }, false);
+    }
+}
 
 //控制台输出
 var styleTitle1 = `
