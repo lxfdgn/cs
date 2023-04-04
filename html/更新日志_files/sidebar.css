@@ -1,0 +1,85 @@
+#support-tab, #goTopBtn {
+  z-index: 9;
+  right: 20px;
+  bottom: 90px;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  border-radius: 25px;
+  line-height: 50px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  -webkit-transition: width .15s ease-out;
+  transition: width .15s ease-out;
+  position: fixed;
+  cursor: pointer;
+  font-weight: 500;
+  overflow: hidden;
+  text-decoration: none;
+  background: url(../sidebar/kline.png) no-repeat #1baadb;
+  background-size: 28px;
+  background-position: 11px center;
+  outline: none;
+  z-index: 999;
+
+}
+
+
+#support-tab1 {
+  z-index: 9;
+  right: 20px;
+  bottom: 160px;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  border-radius: 25px;
+  line-height: 50px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  -webkit-transition: width .15s ease-out;
+  transition: width .15s ease-out;
+  position: fixed;
+  cursor: pointer;
+  font-weight: 500;
+  overflow: hidden;
+  text-decoration: none;
+  background: url(../sidebar/weixin.png) no-repeat #1baadb;/*请更换图标名称*/
+  background-size: 28px;
+  background-position: 11px center;
+  outline: none;
+  z-index: 999;
+
+}
+
+#support-tab1wx{
+	right: 20px;
+    bottom: 210px;
+    position: fixed;
+	display: none;
+	}
+
+#goTopBtn {
+  background-image: url(../sidebar/kgotop.png);
+  bottom: 20px;
+}
+
+#support-tab span, #goTopBtn span,#support-tab1 span{
+  color: #fff;
+  display: none;
+}
+
+#support-tab:hover, #support-tab1:hover, #goTopBtn:hover {
+  width: 146px;
+  background-position: 20px center;
+}
+
+
+
+#support-tab:hover span, #support-tab1:hover span ,#goTopBtn:hover span {
+  display: inline;
+  padding-left: 38px;
+}
+
+#goTopBtn.hidden {
+  display: none;
+}

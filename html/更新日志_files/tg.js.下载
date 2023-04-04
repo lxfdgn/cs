@@ -1,0 +1,103 @@
+try {
+	(function(a,b,c,d){
+	    a[c]=function(){a[c]['ar']=a[c]['ar']||[];a[c]['ar'].push(arguments);};
+	    var s=b.createElement('script');s.async = 1;s.src='//static.t.agrant.cn/ag_track-2.50.js';
+	    var r=b.getElementsByTagName('script')[0];r.parentNode.insertBefore(s,r);
+	    })(window,document,'_agtjs','script');
+    _agtjs('init','AG_850366_YIQN','$website$');
+    _agtjs('trackPv');
+    
+	var runAtDomready = function ( fn) {
+		var done = false, top = true,win=window,
+		doc = win.document,
+		root = doc.documentElement,
+		modern = doc.addEventListener,
+
+		add = modern ? 'addEventListener' : 'attachEvent',
+		rem = modern ? 'removeEventListener' : 'detachEvent',
+		pre = modern ? '' : 'on',
+
+		init = function(e) {
+			if (e.type == 'readystatechange' && doc.readyState != 'complete') return;
+			(e.type == 'load' ? win : doc)[rem](pre + e.type, init, false);
+			if (!done && (done = true)) fn.call(win,  e);
+		},
+
+		poll = function() {
+			try { root.doScroll('left'); } catch(e) { setTimeout(poll, 50); return; }
+			init('poll');
+		};
+
+		if (doc.readyState == 'complete') fn.call(win);
+		else {
+			if (!modern && root.doScroll) {
+				try { top = !win.frameElement; } catch(e) { }
+				if (top) poll();
+			}
+			doc[add](pre + 'DOMContentLoaded', init, false);
+			doc[add](pre + 'readystatechange', init, false);
+			win[add](pre + 'load', init, false);
+		}
+	};
+	var eleOnload = function(ele, fun) {
+		fun && (ele.addEventListener 
+			? ele.onload = fun 
+			: ele.onreadystatechange = function() {
+				ele.readyState in {
+					loaded: 1,
+					complete: 1
+				} && (ele.onreadystatechange = null, fun())
+			})
+	};
+    var agtGetTopUrl = function() {
+        var win=window;
+        var doc=document;
+        var topwin=window.top || window.parent || window;
+    
+        var localUrl = "";
+        try{
+            localUrl=topwin.location.href;
+        }catch(err){
+            localUrl=doc.referrer || win.location.href;
+        }
+        return localUrl;
+    };
+    var agtTopUrl = agtGetTopUrl();
+    
+    var agtCheckString = function(regular, str) {
+        var re = new RegExp(regular);
+        return re.test(str);
+    };
+
+	var agtBindClick = function(element,fn){
+	    if(/mobile/i.test(window.navigator.userAgent))
+	    {
+	    	element.addEventListener('touchstart',fn);
+	    }
+	    else
+	    {
+	        if(element.attachEvent){
+	            element.attachEvent('onclick',fn);
+	        }else if(element.addEventListener){
+	            element.addEventListener('click',fn);
+	        }
+        }
+    }; 
+    
+    var agtBindEventByTimer = function(selector,fn){
+        var interval=setInterval(function(){
+        	var elements=document.querySelectorAll(selector);
+            if(elements && elements.length>0){
+                clearInterval(interval);
+                for(var i=0;i< elements.length;i++){
+                	agtBindClick(elements[i],fn);
+                }
+            }
+        },1000);
+    };
+    
+
+
+} catch (err) {
+    console.log('err:' + err);
+}
