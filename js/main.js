@@ -351,14 +351,14 @@ for (var day of days) {
 var myDate = new Date;
 var mon = myDate.getMonth() + 1;
 var date = myDate.getDate();
-var days = ['5.6'];
+var days = ['4.5'];
 for (var day of days) {
     var d = day.split('.');
     if (mon == d[0] && date == d[1]) {
         document.write(
             '<style>html;filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);_filter:none}</style>'
         )
-        $("#change").html("Silence&nbsp;in&nbsp;silence");
+        $("#change").html("Happy&nbsp;in&nbsp;happy");
         $("#change1").html("今天是“靓仔的网站”建站一周年，本站主页已切换为欢庆模式");
         window.addEventListener('load', function () {
             iziToast.show({
