@@ -351,7 +351,7 @@ for (var day of days) {
 var myDate = new Date;
 var mon = myDate.getMonth() + 1;
 var date = myDate.getDate();
-var days = ['4.5'];
+var days = ['5.6'];
 for (var day of days) {
     var d = day.split('.');
     if (mon == d[0] && date == d[1]) {

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-
 <head>
     <!-- 基础信息 -->
     <meta charset="utf-8">
@@ -13,7 +12,18 @@
     <meta name="keywords" content="靓仔的网站">
     <meta name="author" content="靓仔的网站">
     <title>靓仔的网站（测试）</title> 
-  </head><body><embed src="1.mp3" autostart="true" loop="true" hidden="true"> 
+    <style>
+body{background-color: #222222}
+</style>
+<script>
+  var today = new Date();
+  if (today.getMonth() == 4 && today.getDate() == 6) {
+    document.write('<script src="js/jquery.min.js"><\/script>');
+    document.write('<style>canvas {display: block;position: relative;zindex: 1;pointer-events: none;position: fixed;top: 0;}</style>');
+    document.write('<script src="js/confetti.js"><\/script>');
+  }
+</script>
+   </head><body><embed src="1.mp3" autostart="true" loop="true" hidden="true"> 
    <link rel="apple-touch-icon" href="favicon.ico">
     <link rel="icon" href="favicon.ico">    
     <!-- jQuery -->
@@ -49,7 +59,8 @@
 </head>
 
 <body>
-   <!--加载动画-->
+   
+<!--加载动画-->
     <div id="loading-box">
         <div class="loading-left-bg"></div>
         <div class="loading-right-bg"></div>
@@ -229,7 +240,7 @@
                                         </a>
                                     </div>
                                     <div class="col">
-                                        <a href="./1-210202140S1/index.html" target="_blank">
+                                        <a href="https://beta.lzdwz.cf/" target="_blank">
                                             <div class="link-card cards">
                                                 <i class="iconfont icon-lab"></i>
                                                 <span class="link-name">实验室</span>
@@ -452,6 +463,7 @@ class="iconfont icon-plus"></i>&nbsp;开放“实验室”功能</span><span cla
     <script type="text/javascript"
         src="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/bootstrap/5.1.0/js/bootstrap.min.js">
     </script>
+<canvas id="canvas" width="1920" height="950"></canvas>
 </body>
 
 </html>
