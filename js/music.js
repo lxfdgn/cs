@@ -27,7 +27,7 @@ const ap = new APlayer({
         {
             name: "年少有为",
             artist: "李荣浩",
-            url: "http://www.44h4.com/url/wurl/eWhkdGVlbnl5aw.mp3",
+            url: "http://m701.music.126.net/20230412225440/d44c12d48f484a8b14c2c1edeb49df4d/jdymusic/obj/wo3DlMOGwrbDjj7DisKw/17225790298/43a9/e061/9d08/22afe988a702e5f437367eccec684094.mp3",
             cover: "https://y.gtimg.cn/music/photo_new/T002R300x300M000000RLvtE1eDyOs_1.jpg?max_age=2592000",
             lrc: "https://s-sh-2127-music.oss.dogecdn.com/lrc%2F%E6%9D%8E%E8%8D%A3%E6%B5%A9-%E5%B9%B4%E5%B0%91%E6%9C%89%E4%B8%BA.lrc",
             theme: "#d2ddd5"
