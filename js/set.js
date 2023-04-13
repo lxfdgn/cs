@@ -98,7 +98,7 @@ $(document).ready(function () {
 
         if (type === "3") {
             setBgImg(bg_img);
-            $('#bg').attr('src', 'https://api.ixiaowai.cn/gqapi/gqapi.php'); //随机风景
+            $('#bg').attr('src', 'https://source.unsplash.com/user/erondu/1920x1080'); //随机风景
             iziToast.show({
                 message: '壁纸设置成功',
             });
@@ -106,7 +106,7 @@ $(document).ready(function () {
 
         if (type === "4") {
             setBgImg(bg_img);
-            $('#bg').attr('src', 'https://api.ixiaowai.cn/api/api.php'); //随机动漫
+            $('#bg').attr('src', 'https://img.paulzzh.com/touhou/random'); //随机动漫
             iziToast.show({
                 message: '壁纸设置成功',
             });
