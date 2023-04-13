@@ -51,10 +51,10 @@ function setBgImgInit() {
             $('#bg').attr('src', 'https://api.dujin.org/bing/1920.php'); //必应每日
             break;
         case "3":
-            $('#bg').attr('src', 'https://api.ixiaowai.cn/gqapi/gqapi.php'); //随机风景
+            $('#bg').attr('src', 'https://source.unsplash.com/user/erondu/1920x1080'); //随机风景
             break;
         case "4":
-            $('#bg').attr('src', 'https://api.ixiaowai.cn/api/api.php'); //随机动漫
+            $('#bg').attr('src', 'https://img.paulzzh.com/touhou/random'); //随机动漫
             break;
     }
 }

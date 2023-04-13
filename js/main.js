@@ -351,7 +351,7 @@ for (var day of days) {
 var myDate = new Date;
 var mon = myDate.getMonth() + 1;
 var date = myDate.getDate();
-var days = ['5.6'];
+var days = ['5.1'];
 for (var day of days) {
     var d = day.split('.');
     if (mon == d[0] && date == d[1]) {
@@ -388,7 +388,7 @@ var title2 = `
 `
 var content = `
 版 本 号：2.1.0
-更新日期：2023-05-06
+更新日期：2023-05-01
 
 `
 console.log(`%c${title1} %c${title2}
