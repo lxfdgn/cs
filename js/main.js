@@ -119,19 +119,61 @@ $('#hitokoto').click(function () {
 });
 
 //获取天气
-//每日限量 100 次
-//请前往 https://www.tianqiapi.com/ 申请（免费）
-fetch('https://www.yiketianqi.com/free/day?appid=95485298&appsecret=X5hfvjdb&unescape=1&city=')
-    .then(response => response.json())
-    .then(data => {
-        $('#wea_text').html(data.wea)
-        $('#city_text').html(data.city)
-        $('#tem_night').html(data.tem_night)
-        $('#tem_day').html(data.tem_day)
-        // $('#win_text').html(data.win)
-        // $('#win_speed').html(data.win_speed)
-    })
-    .catch(console.error)
+//请前往 https://www.mxnzp.com/doc/list 申请 app_id 和 app_secret
+//请前往 https://dev.qweather.com/ 申请 key
+const add_id = "jlirofiugtpoovgk"; // app_id
+const app_secret = "eXBTWkxvRzExd0NUSEJCdVFkNzVmdz09"; // app_secret
+const key = "ec52dd2a7d5d4506b45c779cc2ca503b" // key
+function getWeather() {
+    fetch("https://www.mxnzp.com/api/ip/self?app_id=" + add_id + "&app_secret=" + app_secret)
+        .then(response => response.json())
+        .then(data => {
+            let str = data.data.city
+            let city = str.replace(/市/g, '')
+            $('#city_text').html(city);
+            fetch("https://geoapi.qweather.com/v2/city/lookup?location=" + city + "&number=1&key=" + key)
+                .then(response => response.json())
+                .then(location => {
+                    let id = location.location[0].id
+                    fetch("https://devapi.qweather.com/v7/weather/now?location=" + id + "&key=" + key)
+                        .then(response => response.json())
+                        .then(weather => {
+                            $('#wea_text').html(weather.now.text)
+                            $('#tem_text').html(weather.now.temp + "°C&nbsp;")
+                            $('#win_text').html(weather.now.windDir)
+                            $('#win_speed').html(weather.now.windScale + "级")
+                        })
+                })
+        })
+        .catch(console.error);
+}
+
+getWeather();
+
+let wea = 0;
+$('#upWeather').click(function () {
+    if (wea == 0) {
+        wea = 1;
+        let index = setInterval(function () {
+            wea--;
+            if (wea == 0) {
+                clearInterval(index);
+            }
+        }, 60000);
+        getWeather();
+        iziToast.show({
+            timeout: 2000,
+                            iconUrl: './img/icon/天气.png',
+            message: '实时天气已更新'
+        });
+    } else {
+        iziToast.show({
+            timeout: 1000,
+                            iconUrl: './img/icon/warn.png',
+            message: '请稍后再更新哦'
+        });
+    }
+});
 
 //获取时间
 var t = null;
