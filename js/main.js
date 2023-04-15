@@ -112,7 +112,7 @@ $('#hitokoto').click(function () {
     } else {
         iziToast.show({
             timeout: 1000,
-            icon: "fa-solid fa-circle-exclamation",
+                            iconUrl: './img/icon/warn.png',
             message: '你点太快了吧',
         });
     }
