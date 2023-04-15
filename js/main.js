@@ -92,6 +92,32 @@ fetch('https://v1.hitokoto.cn?max_length=24')
     })
     .catch(console.error)
 
+let times = 0;
+$('#hitokoto').click(function () {
+    if (times == 0) {
+        times = 1;
+        let index = setInterval(function () {
+            times--;
+            if (times == 0) {
+                clearInterval(index);
+            }
+        }, 1000);
+        fetch('https://v1.hitokoto.cn?max_length=24')
+            .then(response => response.json())
+            .then(data => {
+                $('#hitokoto_text').html(data.hitokoto)
+                $('#from_text').html(data.from)
+            })
+            .catch(console.error)
+    } else {
+        iziToast.show({
+            timeout: 1000,
+            icon: "fa-solid fa-circle-exclamation",
+            message: '你点太快了吧',
+        });
+    }
+});
+
 //获取天气
 //每日限量 100 次
 //请前往 https://www.tianqiapi.com/ 申请（免费）
